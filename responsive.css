@@ -1,0 +1,14 @@
+@media screen and (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .widget {
+        margin: 0.5rem;
+        padding: 0.5rem;
+    }
+
+    .profile-overview, .todo-section {
+        width: 100%;
+    }
+}

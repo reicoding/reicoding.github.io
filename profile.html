@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}My Profile - Study Partner Finder{% endblock %}
+
+{% block content %}
+<section class="profile-section">
+    <h2>Edit Profile</h2>
+    <form id="profile-form" method="post" action="{{ url_for('update_profile') }}">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="{{ user.username }}">
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" value="{{ user.name }}">
+
+        <label for="goals">Goals:</label>
+        <input type="text" id="goals" name="goals" value="{{ user.goals }}">
+        
+        <label for="interests">Interests:</label>
+        <input type="text" id="interests" name="interests" value="{{ user.interests }}">
+
+        <label for="bio">Bio:</label>
+        <input type="text" id="bio" name="bio" value="{{ user.bio }}">
+
+        <label for="time zone">Time zone:</label>
+        <input type="text" id="time zone" name="time zone" value="{{ user.timezone }}">
+        
+        <button type="submit">Update Profile</button>
+    </form>
+</section>
+{% endblock %}

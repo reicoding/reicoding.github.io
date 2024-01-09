@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Study Partner Finder{% endblock %}
+
+{% block content %}
+<section class="todo-section">
+    <h2>To-Do List</h2>
+    <form id="todo-form" method="post" action="{{ url_for('home') }}">
+        <input type="text" id="new-todo" name="task" placeholder="Add a new task...">
+        <button type="submit">Add</button>
+    </form>
+    <ul id="todo-list">
+        {% for task in tasks %}
+            <li>{{ task.description }}</li>
+        {% endfor %}
+    </ul>
+</section>
+
+<section class="profile-overview">
+    <h2>My Profile</h2>
+    <!-- Ensure that 'user' variable is passed to the template from the Flask view -->
+    <p>Username: {{ user.username }}</p>
+    <p>Goals: {{ user.goals }}</p>
+    <p>Interests: {{ user.interests }}</p>
+</section>
+{% endblock %}

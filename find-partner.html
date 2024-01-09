@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Find Partner - Study Partner Finder{% endblock %}
+
+{% block content %}
+<section class="partner-section">
+    <h2>Find Study Partners</h2>
+    <div id="partner-filters">
+        <!-- Add filters here (this can be a form that submits filter criteria) -->
+    </div>
+    <div id="partner-cards">
+        {% for partner in partners %}
+            <div class="partner-card">
+                <img src="{{ partner.profile_picture_url }}" alt="Profile Picture">
+                <h3>{{ partner.name }}</h3>
+                <p>Age: {{ partner.age }}</p>
+                <p>Interests: {{ partner.interests }}</p>
+                <p>Goals: {{ partner.goals }}</p>
+                <button onclick="sendFriendRequest(`{{ partner.id }}`)">Send Friend Request</button>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

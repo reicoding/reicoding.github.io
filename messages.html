@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Messages - Study Partner Finder{% endblock %}
+
+{% block content %}
+<section class="messages-section">
+    <h2>Messages</h2>
+    <aside id="message-list">
+        <ul>
+            {% for conversation in conversations %}
+                <li><a href="{{ url_for('view_messages', partner_id=conversation.partner_id) }}">{{ conversation.partner_name }}</a></li>
+            {% endfor %}
+        </ul>
+    </aside>
+    <article id="message-conversation">
+        <!-- Messages will be loaded here based on the selected conversation -->
+    </article>
+</section>
+{% endblock %}
